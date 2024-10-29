@@ -1,0 +1,19 @@
+{
+  "Version": 1,
+  "Hash": "1wS6zXYW7Qvd0VoFwJdI0+71UxiCoHFH7CSkjKx7EBo=",
+  "Source": "Medical.Api",
+  "BasePath": "_content/Medical.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "Medical.Api\\wwwroot",
+      "Source": "Medical.Api",
+      "ContentRoot": "C:\\Users\\lap tech\\Desktop\\Medical\\Medical.Api\\wwwroot\\",
+      "BasePath": "_content/Medical.Api",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": []
+}

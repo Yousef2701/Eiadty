@@ -1,0 +1,7 @@
+<system.webServer>
+    <security>
+      <requestFiltering>
+        <requestLimits maxAllowedContentLength="536870912" /> <!--50MB-->
+      </requestFiltering>
+    </security>
+  </system.webServer>
