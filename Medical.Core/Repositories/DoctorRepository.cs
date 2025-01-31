@@ -12,6 +12,8 @@ namespace Medical.Core.Repositories
     public class DoctorRepository : IDoctorRepository
     {
 
+        #region Dependancey injuction
+
         private readonly ApplicationDbContext _context;
         private readonly IAuthoRepository _authoRepository;
         private readonly IMapper _mapper;
@@ -27,6 +29,11 @@ namespace Medical.Core.Repositories
             _mapper = mapper;
             _imageRepository = imageRepository;
         }
+
+        #endregion
+
+
+        #region Add Doctor Async
 
         public async Task<AuthModel> AddDoctorAsync(DoctorDto doctor)
         {
@@ -48,7 +55,7 @@ namespace Medical.Core.Repositories
                 authModel.Message = authModel.Message + " Wrong Phone number";
                 return authModel;
             }
-            var imageUrl =await _imageRepository.AddImageAsync(doctor.image, doctor.Phone, "UsersImages");
+            var imageUrl = await _imageRepository.AddImageAsync(doctor.image, doctor.Phone, "UsersImages");
             var newDoctor = _mapper.Map<Doctor>(doctor);
             newDoctor.ImageUrl = imageUrl;
             var jwtSecurityToken = await _authoRepository.CreateJwtToken(user);
@@ -73,6 +80,10 @@ namespace Medical.Core.Repositories
             };
         }
 
+        #endregion
+
+        #region Delete User
+
         private async Task<string> DeleteUser(string phone)
         {
             var user = await _authoRepository.GetUser(phone);
@@ -85,6 +96,10 @@ namespace Medical.Core.Repositories
 
         }
 
+        #endregion
+
+        #region Get All Clinic Doctors
+
         public async Task<IEnumerable<Doctor>> GetAllClinicDoctors(string clinicName)
         {
             var doctors = _context.Doctors.Where(m => m.Department == clinicName).ToList();
@@ -92,12 +107,16 @@ namespace Medical.Core.Repositories
             return doctors;
         }
 
+        #endregion
+
+        #region Get All Doctors
+
         public async Task<IEnumerable<DoctorDto>> GetAllDoctors()
         {
             var doctors = _context.Doctors.ToList();
-            List<DoctorDto> all = new List<DoctorDto>(); 
+            List<DoctorDto> all = new List<DoctorDto>();
 
-            foreach(var doctor in doctors)
+            foreach (var doctor in doctors)
             {
                 bool check = _context.Users.Where(m => m.PhoneNumber == doctor.Phone).Select(m => m.EmailConfirmed).SingleOrDefault();
 
@@ -125,17 +144,28 @@ namespace Medical.Core.Repositories
             return all;
         }
 
+        #endregion
+
+        #region Get Doctor Check Price
+
         public async Task<double> GetDoctorCheckPrice(string doctorPhone, string checkType)
         {
-            if(checkType == "newCheck")
+            if (checkType == "newCheck")
                 return _context.Doctors.Where(m => m.Phone == doctorPhone).Select(m => m.NewCheckPrie).FirstOrDefault();
             else
                 return _context.Doctors.Where(m => m.Phone == doctorPhone).Select(m => m.ReCheckPrie).FirstOrDefault();
         }
 
+        #endregion
+
+        #region Get Doctor Name
+
         public async Task<string> GetDoctorName(string doctorPhone)
         {
-            return _context.Doctors.Where(m => m.Phone == doctorPhone).Select(m => m.Name).FirstOrDefault() +" - "+ DateTime.Now.ToString("yyyy-MM-dd"); ; 
+            return _context.Doctors.Where(m => m.Phone == doctorPhone).Select(m => m.Name).FirstOrDefault() + " - " + DateTime.Now.ToString("yyyy-MM-dd"); ;
         }
+
+        #endregion
+
     }
 }

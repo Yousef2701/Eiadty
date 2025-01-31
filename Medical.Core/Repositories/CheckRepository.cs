@@ -8,16 +8,24 @@ namespace Medical.Core.Repositories
 {
     public class CheckRepository : BaseRepository<Check>, ICheckRepository
     {
+
+        #region Dependancey injuction
+
         public CheckRepository(ApplicationDbContext context) : base(context)
         {
         }
+
+        #endregion
+
+
+        #region Get All Doctor Checks
 
         public async Task<IEnumerable<CheckDto>> GetAllDoctorChecks(string DoctorPhone)
         {
             var checks = _context.Checks.Where(m => m.Doctor_Phone == DoctorPhone).OrderBy(m => m.Date).ThenBy(m => m.Am_Pm).ThenBy(m => m.Time).ToList();
             List<CheckDto> allChecks = new List<CheckDto>();
 
-            foreach(Check item in checks)
+            foreach (Check item in checks)
             {
                 var ch = new CheckDto
                 {
@@ -42,6 +50,10 @@ namespace Medical.Core.Repositories
 
             return allChecks;
         }
+
+        #endregion
+
+        #region Get All Patient Checks
 
         public async Task<IEnumerable<CheckDto>> GetAllPatientChecks(string patientPhone)
         {
@@ -75,6 +87,10 @@ namespace Medical.Core.Repositories
             return allChecks;
         }
 
+        #endregion
+
+        #region Get All Patient Doctor Check
+
         public async Task<IEnumerable<CheckDto>> GetAllPatientDoctorCheck(string patientPhone, string DoctorPhone)
         {
             var checks = _context.Checks.Where(m => m.Doctor_Phone == DoctorPhone & m.Patient_Phone == patientPhone).OrderBy(m => m.Date).ThenBy(m => m.Am_Pm).ThenBy(m => m.Time).ToList();
@@ -107,11 +123,18 @@ namespace Medical.Core.Repositories
             return allChecks;
         }
 
+        #endregion
+
+        #region Get Check By Numbre
+
         public async Task<Check> GetCheckByNumbre(int numbre)
         {
             var check = _context.Checks.Find(numbre);
 
             return check;
         }
+
+        #endregion
+
     }
 }

@@ -1,0 +1,1593 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Medical.Api",
+    "version": "1.0"
+  },
+  "paths": {
+    "/api/Autho/PatientRsegister": {
+      "post": {
+        "tags": [
+          "Autho"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PatientDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PatientDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/PatientDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Autho/DoctorRegister": {
+      "post": {
+        "tags": [
+          "Autho"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "required": [
+                  "Adreess",
+                  "CheckPassword",
+                  "City",
+                  "Department",
+                  "FromDay",
+                  "FromHour",
+                  "Governrate",
+                  "Name",
+                  "NewCheckPrie",
+                  "Password",
+                  "Phone",
+                  "ReCheckPrie",
+                  "ScienceDegree",
+                  "ToDay",
+                  "ToHour"
+                ],
+                "type": "object",
+                "properties": {
+                  "Phone": {
+                    "maxLength": 11,
+                    "minLength": 11,
+                    "pattern": "^01[0125][0-9]{8}$",
+                    "type": "string"
+                  },
+                  "Name": {
+                    "maxLength": 35,
+                    "minLength": 7,
+                    "pattern": "^[ا-ي ء أ ؤ]+$*[ؤ ء أ ا-ي]+[ؤ ء أ ا-ي]*$",
+                    "type": "string"
+                  },
+                  "Password": {
+                    "maxLength": 16,
+                    "minLength": 8,
+                    "pattern": "^[0-9]+[0-9a-zA-Z]*$",
+                    "type": "string"
+                  },
+                  "CheckPassword": {
+                    "maxLength": 16,
+                    "minLength": 8,
+                    "pattern": "^[0-9]+[0-9a-zA-Z]*$",
+                    "type": "string"
+                  },
+                  "Governrate": {
+                    "maxLength": 16,
+                    "minLength": 3,
+                    "pattern": "^[ا-ي ء أ ؤ]+$*[ؤ ء أ ا-ي]+[ؤ ء أ ا-ي]*$",
+                    "type": "string"
+                  },
+                  "City": {
+                    "maxLength": 36,
+                    "minLength": 3,
+                    "pattern": "^[ا-ي ء أ ؤ]+$*[ؤ ء أ ا-ي]+[ؤ ء أ ا-ي]*$",
+                    "type": "string"
+                  },
+                  "Adreess": {
+                    "maxLength": 70,
+                    "minLength": 8,
+                    "pattern": "^[ا-ي ء أ ؤ]+$*[ؤ ء أ ا-ي]+[ؤ ء أ ا-ي]*$",
+                    "type": "string"
+                  },
+                  "Department": {
+                    "maxLength": 40,
+                    "minLength": 5,
+                    "pattern": "^[ا-ي ء أ ؤ]+$*[ؤ ء أ ا-ي]+[ؤ ء أ ا-ي]*$",
+                    "type": "string"
+                  },
+                  "ScienceDegree": {
+                    "maxLength": 70,
+                    "minLength": 5,
+                    "pattern": "^[ا-ي ء أ ؤ]+$*[ؤ ء أ ا-ي]+[ؤ ء أ ا-ي]*$",
+                    "type": "string"
+                  },
+                  "FromDay": {
+                    "maxLength": 10,
+                    "minLength": 5,
+                    "pattern": "^[ء ؤ أ ا-ي]+[ؤ ء أ ا-ي]*$",
+                    "type": "string"
+                  },
+                  "ToDay": {
+                    "maxLength": 10,
+                    "minLength": 5,
+                    "pattern": "^[ء ؤ أ ا-ي]+[ء ؤ أ ا-ي]*$",
+                    "type": "string"
+                  },
+                  "FromHour": {
+                    "maxLength": 11,
+                    "minLength": 5,
+                    "pattern": "^[0-9]+[0-9]+[:]+[0-9]+[ ]+[ا-ي ء ؤ أ]*$",
+                    "type": "string"
+                  },
+                  "ToHour": {
+                    "maxLength": 11,
+                    "minLength": 5,
+                    "pattern": "^[0-9]+[0-9]+[:]+[0-9]+[ ]+[ء ؤ أ ا-ي]*$",
+                    "type": "string"
+                  },
+                  "NewCheckPrie": {
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "ReCheckPrie": {
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "IsActive": {
+                    "type": "boolean"
+                  },
+                  "image": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              },
+              "encoding": {
+                "Phone": {
+                  "style": "form"
+                },
+                "Name": {
+                  "style": "form"
+                },
+                "Password": {
+                  "style": "form"
+                },
+                "CheckPassword": {
+                  "style": "form"
+                },
+                "Governrate": {
+                  "style": "form"
+                },
+                "City": {
+                  "style": "form"
+                },
+                "Adreess": {
+                  "style": "form"
+                },
+                "Department": {
+                  "style": "form"
+                },
+                "ScienceDegree": {
+                  "style": "form"
+                },
+                "FromDay": {
+                  "style": "form"
+                },
+                "ToDay": {
+                  "style": "form"
+                },
+                "FromHour": {
+                  "style": "form"
+                },
+                "ToHour": {
+                  "style": "form"
+                },
+                "NewCheckPrie": {
+                  "style": "form"
+                },
+                "ReCheckPrie": {
+                  "style": "form"
+                },
+                "IsActive": {
+                  "style": "form"
+                },
+                "image": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Autho/AdminRegister": {
+      "post": {
+        "tags": [
+          "Autho"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AdminRegisterDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AdminRegisterDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/AdminRegisterDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Autho/AppendAccount": {
+      "post": {
+        "tags": [
+          "Autho"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AppentAccountDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AppentAccountDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/AppentAccountDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Autho/ActivateAccount": {
+      "post": {
+        "tags": [
+          "Autho"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AppentAccountDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AppentAccountDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/AppentAccountDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Autho/IsAccountActive": {
+      "post": {
+        "tags": [
+          "Autho"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AppentAccountDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AppentAccountDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/AppentAccountDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Autho/LogIn": {
+      "post": {
+        "tags": [
+          "Autho"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LogInDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LogInDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/LogInDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Autho/RevokeToken": {
+      "post": {
+        "tags": [
+          "Autho"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RevokeDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RevokeDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RevokeDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Books/CreateBookAsync": {
+      "post": {
+        "tags": [
+          "Books"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BookDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BookDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/BookDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Books/GetAllDoctorBooks": {
+      "get": {
+        "tags": [
+          "Books"
+        ],
+        "parameters": [
+          {
+            "name": "phone",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Books/GetAllPatientBooks": {
+      "get": {
+        "tags": [
+          "Books"
+        ],
+        "parameters": [
+          {
+            "name": "patient_Phone",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Books/GetAllDoctorBooksInDay": {
+      "get": {
+        "tags": [
+          "Books"
+        ],
+        "parameters": [
+          {
+            "name": "phone",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Books/GetDoctorNameAndTodatDate": {
+      "get": {
+        "tags": [
+          "Books"
+        ],
+        "parameters": [
+          {
+            "name": "phone",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Checks/AddCheckInformation": {
+      "post": {
+        "tags": [
+          "Checks"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddCheckDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddCheckDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddCheckDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Checks/GetAllDoctorChecks": {
+      "get": {
+        "tags": [
+          "Checks"
+        ],
+        "parameters": [
+          {
+            "name": "doctorPhone",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Checks/GetAllPatientChecks": {
+      "get": {
+        "tags": [
+          "Checks"
+        ],
+        "parameters": [
+          {
+            "name": "patientPhone",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Checks/GetAllPatientDoctorCheck": {
+      "get": {
+        "tags": [
+          "Checks"
+        ],
+        "parameters": [
+          {
+            "name": "patientPhone",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "doctorPhone",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Checks/GetCheckByNumbre": {
+      "get": {
+        "tags": [
+          "Checks"
+        ],
+        "parameters": [
+          {
+            "name": "num",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Clinics/GitClinics": {
+      "get": {
+        "tags": [
+          "Clinics"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Comments/CreateNewComment": {
+      "post": {
+        "tags": [
+          "Comments"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CommentDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CommentDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CommentDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Comments/GetPostComments": {
+      "get": {
+        "tags": [
+          "Comments"
+        ],
+        "parameters": [
+          {
+            "name": "postId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Comments/DeleteComment": {
+      "delete": {
+        "tags": [
+          "Comments"
+        ],
+        "parameters": [
+          {
+            "name": "postId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "commentNumbre",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Diseases/AddDiseases": {
+      "post": {
+        "tags": [
+          "Diseases"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DiseasesDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DiseasesDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DiseasesDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Diseases/GetAllPatientDiseases": {
+      "get": {
+        "tags": [
+          "Diseases"
+        ],
+        "parameters": [
+          {
+            "name": "patientPhone",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Diseases/DeleteDiseases": {
+      "delete": {
+        "tags": [
+          "Diseases"
+        ],
+        "parameters": [
+          {
+            "name": "Patient_Phone",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Diseases_Name",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Doctors/GetDoctorById": {
+      "get": {
+        "tags": [
+          "Doctors"
+        ],
+        "parameters": [
+          {
+            "name": "phone",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Doctors/GetAllDoctors": {
+      "get": {
+        "tags": [
+          "Doctors"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Doctors/GetAllClinicDoctors": {
+      "get": {
+        "tags": [
+          "Doctors"
+        ],
+        "parameters": [
+          {
+            "name": "clinicName",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Drugs/AddDrug": {
+      "post": {
+        "tags": [
+          "Drugs"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DrugDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DrugDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DrugDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Drugs/GetAllPatientDrugs": {
+      "get": {
+        "tags": [
+          "Drugs"
+        ],
+        "parameters": [
+          {
+            "name": "patientPhone",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Drugs/DeleteDrug": {
+      "delete": {
+        "tags": [
+          "Drugs"
+        ],
+        "parameters": [
+          {
+            "name": "Patient_Phone",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Drug_Name",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Files/GetPostVedio": {
+      "get": {
+        "tags": [
+          "Files"
+        ],
+        "parameters": [
+          {
+            "name": "postId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Files/GetPostImage": {
+      "get": {
+        "tags": [
+          "Files"
+        ],
+        "parameters": [
+          {
+            "name": "postId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Files/GetDoctorImage": {
+      "get": {
+        "tags": [
+          "Files"
+        ],
+        "parameters": [
+          {
+            "name": "doctorPhone",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Likes/PostLikes": {
+      "post": {
+        "tags": [
+          "Likes"
+        ],
+        "parameters": [
+          {
+            "name": "postId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "patientPhone",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Likes/IfUserAddLike": {
+      "get": {
+        "tags": [
+          "Likes"
+        ],
+        "parameters": [
+          {
+            "name": "postId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "patientPhone",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Operations/AddOperation": {
+      "post": {
+        "tags": [
+          "Operations"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OperationDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OperationDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/OperationDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Operations/GetAllPatientOperations": {
+      "get": {
+        "tags": [
+          "Operations"
+        ],
+        "parameters": [
+          {
+            "name": "patientPhone",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Operations/DeleteOperation": {
+      "delete": {
+        "tags": [
+          "Operations"
+        ],
+        "parameters": [
+          {
+            "name": "Patient_Phone",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Operation_Name",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Patients/GetPatientById": {
+      "get": {
+        "tags": [
+          "Patients"
+        ],
+        "parameters": [
+          {
+            "name": "phone",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Patients/GetAllPatients": {
+      "get": {
+        "tags": [
+          "Patients"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Posts/CreateNewPost": {
+      "post": {
+        "tags": [
+          "Posts"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "required": [
+                  "DoctorPhone",
+                  "Text"
+                ],
+                "type": "object",
+                "properties": {
+                  "Text": {
+                    "type": "string"
+                  },
+                  "DoctorPhone": {
+                    "type": "string"
+                  },
+                  "image": {
+                    "type": "string",
+                    "format": "binary"
+                  },
+                  "vedio": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              },
+              "encoding": {
+                "Text": {
+                  "style": "form"
+                },
+                "DoctorPhone": {
+                  "style": "form"
+                },
+                "image": {
+                  "style": "form"
+                },
+                "vedio": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Posts/GetAllPosts": {
+      "get": {
+        "tags": [
+          "Posts"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Posts/GetAllDoctorPosts": {
+      "get": {
+        "tags": [
+          "Posts"
+        ],
+        "parameters": [
+          {
+            "name": "phone",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Posts/DeletePost": {
+      "delete": {
+        "tags": [
+          "Posts"
+        ],
+        "parameters": [
+          {
+            "name": "postId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AddCheckDto": {
+        "required": [
+          "am_Pm",
+          "complaint",
+          "date",
+          "diagnosis",
+          "time"
+        ],
+        "type": "object",
+        "properties": {
+          "book_Numbre": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "complaint": {
+            "maxLength": 250,
+            "type": "string"
+          },
+          "doctor_Phone": {
+            "type": "string",
+            "nullable": true
+          },
+          "patient_Phone": {
+            "type": "string",
+            "nullable": true
+          },
+          "date": {
+            "maxLength": 10,
+            "type": "string"
+          },
+          "time": {
+            "maxLength": 5,
+            "type": "string"
+          },
+          "am_Pm": {
+            "maxLength": 2,
+            "type": "string"
+          },
+          "diagnosis": {
+            "maxLength": 350,
+            "type": "string"
+          },
+          "drugListUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "rayListUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "analysistListUrl": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "AdminRegisterDto": {
+        "required": [
+          "checkPassword",
+          "password",
+          "phone"
+        ],
+        "type": "object",
+        "properties": {
+          "phone": {
+            "maxLength": 11,
+            "minLength": 11,
+            "pattern": "^01[0125][0-9]{8}$",
+            "type": "string"
+          },
+          "password": {
+            "maxLength": 16,
+            "minLength": 8,
+            "pattern": "^[0-9]+[0-9a-zA-Z]*$",
+            "type": "string"
+          },
+          "checkPassword": {
+            "maxLength": 16,
+            "minLength": 8,
+            "pattern": "^[0-9]+[0-9a-zA-Z]*$",
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "AppentAccountDto": {
+        "required": [
+          "phone"
+        ],
+        "type": "object",
+        "properties": {
+          "phone": {
+            "maxLength": 11,
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "BookDto": {
+        "required": [
+          "book_Type",
+          "complaint",
+          "date",
+          "doctor_Phone",
+          "patient_Phone",
+          "time"
+        ],
+        "type": "object",
+        "properties": {
+          "doctor_Phone": {
+            "maxLength": 11,
+            "type": "string"
+          },
+          "patient_Phone": {
+            "maxLength": 11,
+            "type": "string"
+          },
+          "complaint": {
+            "maxLength": 250,
+            "type": "string"
+          },
+          "date": {
+            "maxLength": 10,
+            "type": "string"
+          },
+          "time": {
+            "maxLength": 7,
+            "type": "string"
+          },
+          "book_Type": {
+            "maxLength": 35,
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CommentDto": {
+        "required": [
+          "comment_Text",
+          "patientPhone",
+          "postId"
+        ],
+        "type": "object",
+        "properties": {
+          "postId": {
+            "type": "string"
+          },
+          "patientPhone": {
+            "type": "string"
+          },
+          "comment_Text": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "DiseasesDto": {
+        "required": [
+          "diseases_Name",
+          "patient_Phone"
+        ],
+        "type": "object",
+        "properties": {
+          "patient_Phone": {
+            "maxLength": 11,
+            "type": "string"
+          },
+          "diseases_Name": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "DrugDto": {
+        "required": [
+          "drug_Name",
+          "patient_Phone"
+        ],
+        "type": "object",
+        "properties": {
+          "patient_Phone": {
+            "maxLength": 11,
+            "type": "string"
+          },
+          "drug_Name": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "LogInDTO": {
+        "required": [
+          "password",
+          "phone"
+        ],
+        "type": "object",
+        "properties": {
+          "phone": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "OperationDto": {
+        "required": [
+          "operation_Name",
+          "patient_Phone"
+        ],
+        "type": "object",
+        "properties": {
+          "patient_Phone": {
+            "maxLength": 11,
+            "type": "string"
+          },
+          "operation_Name": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PatientDto": {
+        "required": [
+          "birthDate",
+          "checkPassword",
+          "fName",
+          "isMale",
+          "lName",
+          "password",
+          "phone",
+          "smoke"
+        ],
+        "type": "object",
+        "properties": {
+          "phone": {
+            "maxLength": 11,
+            "minLength": 11,
+            "pattern": "^01[0125][0-9]{8}$",
+            "type": "string"
+          },
+          "password": {
+            "maxLength": 16,
+            "minLength": 8,
+            "pattern": "^[0-9]+[0-9a-zA-Z]*$",
+            "type": "string"
+          },
+          "checkPassword": {
+            "maxLength": 16,
+            "minLength": 8,
+            "pattern": "^[0-9]+[0-9a-zA-Z]*$",
+            "type": "string"
+          },
+          "fName": {
+            "maxLength": 16,
+            "minLength": 3,
+            "pattern": "^[ا-ي ء أ ؤ]+$*[ؤ ء أ ا-ي]+[ؤ ء أ ا-ي]*$",
+            "type": "string"
+          },
+          "lName": {
+            "maxLength": 16,
+            "minLength": 3,
+            "pattern": "^[ا-ي ء أ ؤ]+$*[ؤ ء أ ا-ي]+[ؤ ء أ ا-ي]*$",
+            "type": "string"
+          },
+          "birthDate": {
+            "maxLength": 10,
+            "minLength": 0,
+            "type": "string"
+          },
+          "isMale": {
+            "type": "boolean"
+          },
+          "smoke": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "RevokeDto": {
+        "type": "object",
+        "properties": {
+          "token": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

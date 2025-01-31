@@ -11,6 +11,8 @@ namespace Medical.Api.Controllers
     public class AuthoController : ControllerBase
     {
 
+        #region Dependancey injuction
+
         private readonly IAuthoRepository _authoRepository;
         private readonly IPatientRepository _patientRepository;
         private readonly IDoctorRepository _doctorRepository;
@@ -30,6 +32,11 @@ namespace Medical.Api.Controllers
             _dataProtector = dataProtectionProvider.CreateProtector("SecureCoding");
         }
 
+        #endregion
+
+
+        #region Patient Register Async
+
         [HttpPost("PatientRsegister")]
         public async Task<IActionResult> PatientRegisterAsync([FromBody] PatientDto patient)
         {
@@ -40,14 +47,18 @@ namespace Medical.Api.Controllers
             var register = await _authoRepository.RegisterAsync(model, "Patient");
             if (!register.IsAuthenticated)
                 return BadRequest(register.Message);
- 
+
             var result = await _patientRepository.AddPatientAsync(patient);
 
             if (!result.IsAuthenticated)
                 return BadRequest(result.Message);
 
-            return Ok(new { phone = result.Phone,role = "Patient", token = result.Token});
+            return Ok(new { phone = result.Phone, role = "Patient", token = result.Token });
         }
+
+        #endregion
+
+        #region Doctor Register Async
 
         [HttpPost("DoctorRegister")]
         public async Task<IActionResult> DoctorRegisterAsync([FromForm] DoctorDto doctor)
@@ -59,7 +70,7 @@ namespace Medical.Api.Controllers
             var register = await _authoRepository.RegisterAsync(model, "Doctor");
             if (!register.IsAuthenticated)
                 return BadRequest(register.Message);
- 
+
             var result = await _doctorRepository.AddDoctorAsync(doctor);
 
             if (!result.IsAuthenticated)
@@ -68,7 +79,9 @@ namespace Medical.Api.Controllers
             return Ok(new { phone = result.Phone, role = "Doctor", token = result.Token });
         }
 
+        #endregion
 
+        #region Admin Register Async
 
         [HttpPost("AdminRegister")]
         public async Task<IActionResult> AdminRegisterAsync([FromBody] AdminRegisterDto dto)
@@ -85,11 +98,19 @@ namespace Medical.Api.Controllers
             return Ok("Success!");
         }
 
+        #endregion
+
+        #region Append Account
+
         [HttpPost("AppendAccount")]
         public async Task<IActionResult> AppendAccount([FromBody] AppentAccountDto dto)
         {
             return Ok(await _authoRepository.AppendAccount(dto.phone));
         }
+
+        #endregion
+
+        #region Activate Account
 
         [HttpPost("ActivateAccount")]
         public async Task<IActionResult> ActivateAccount([FromBody] AppentAccountDto dto)
@@ -97,16 +118,24 @@ namespace Medical.Api.Controllers
             return Ok(await _authoRepository.ActivateAccount(dto.phone));
         }
 
+        #endregion
+
+        #region Is Account Active
+
         [HttpPost("IsAccountActive")]
         public async Task<IActionResult> IsAccountActive([FromBody] AppentAccountDto dto)
         {
             return Ok(await _authoRepository.IsAccountAvtive(dto.phone));
         }
 
+        #endregion
+
+        #region LogIn Async
+
         [HttpPost("LogIn")]
         public async Task<IActionResult> LogInAsync([FromBody] LogInDTO user)
         {
-            if(!ModelState.IsValid)
+            if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
             var result = await _authoRepository.GetTokenAsync(user);
@@ -124,6 +153,10 @@ namespace Medical.Api.Controllers
             return Ok(new { phone = result.Phone, role = role, token = result.Token });
         }
 
+        #endregion
+
+        #region LogOut
+
         [HttpPost("RevokeToken")]
         public async Task<IActionResult> LogOut([FromBody] RevokeDto model)
         {
@@ -138,6 +171,10 @@ namespace Medical.Api.Controllers
             return Ok("loged out success");
         }
 
+        #endregion
+
+        #region Set Refresh Token Cookie
+
         private void SetRefreshTokenCookie(string refreshToken, DateTime expires)
         {
             var cookieOptions = new CookieOptions
@@ -149,5 +186,8 @@ namespace Medical.Api.Controllers
             Response.Cookies.Append(key: "refreshToken", refreshToken, cookieOptions);
 
         }
+
+        #endregion
+
     }
 }

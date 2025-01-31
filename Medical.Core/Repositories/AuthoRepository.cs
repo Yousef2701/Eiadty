@@ -17,6 +17,8 @@ namespace Medical.EF.Repositories
     public class AuthoRepository : IAuthoRepository
     {
 
+        #region Dependancey injuction
+
         private readonly UserManager<ApplicationIdentityUser> _userManager;
         private readonly ApplicationDbContext _context;
         private readonly JWT _jWT;
@@ -29,6 +31,11 @@ namespace Medical.EF.Repositories
             _context = context;
             _jWT = jWT.Value;
         }
+
+        #endregion
+
+
+        #region Register Async
 
         public async Task<AuthModel> RegisterAsync(RegisterDTO dto, string role)
         {
@@ -81,11 +88,19 @@ namespace Medical.EF.Repositories
             };
         }
 
+        #endregion
+
+        #region Delete User
+
         public async Task<string> DeleteUser(ApplicationIdentityUser user)
         {
             await _userManager.DeleteAsync(user);
             return "ok";
         }
+
+        #endregion
+
+        #region Create Jwt Token
 
         public async Task<JwtSecurityToken> CreateJwtToken(ApplicationIdentityUser user)
         {
@@ -115,11 +130,19 @@ namespace Medical.EF.Repositories
             return jwtSecurityToken;
         }
 
+        #endregion
+
+        #region Get User
+
         public async Task<ApplicationIdentityUser> GetUser(string phone)
         {
             var user = await _userManager.FindByEmailAsync(phone + "@Gmail.com".ToUpper());
             return user;
         }
+
+        #endregion
+
+        #region Get Token Async
 
         public async Task<AuthModel> GetTokenAsync(LogInDTO model)
         {
@@ -157,6 +180,10 @@ namespace Medical.EF.Repositories
             return authModel;
         }
 
+        #endregion
+
+        #region Revoke Token Async
+
         public async Task<bool> RevokeTokenAsync(string token)
         {
             var user = await _userManager.Users.SingleOrDefaultAsync(u => u.RefreshTokens.Any(t => t.Token == token));
@@ -176,6 +203,10 @@ namespace Medical.EF.Repositories
             return true;
         }
 
+        #endregion
+
+        #region Get Role
+
         public async Task<string> GetRole(string phone)
         {
             string email = phone + "@gmail.com";
@@ -192,12 +223,16 @@ namespace Medical.EF.Repositories
             return "";
         }
 
+        #endregion
+
+        #region Append Account
+
         public async Task<string> AppendAccount(string phone)
         {
-            if(phone is not null)
+            if (phone is not null)
             {
                 var user = _context.Users.Where(m => m.Email == phone + "@Gmail.Com").SingleOrDefault();
-                if(user is not null)
+                if (user is not null)
                 {
                     user.EmailConfirmed = false;
                     await _userManager.UpdateAsync(user);
@@ -208,6 +243,10 @@ namespace Medical.EF.Repositories
             }
             return "Phone is Required!";
         }
+
+        #endregion
+
+        #region Activate Account
 
         public async Task<string> ActivateAccount(string phone)
         {
@@ -225,6 +264,10 @@ namespace Medical.EF.Repositories
             }
             return "Phone is Required!";
         }
+
+        #endregion
+
+        #region Is Account Avtive
 
         public async Task<string> IsAccountAvtive(string phone)
         {
@@ -246,6 +289,10 @@ namespace Medical.EF.Repositories
             return "Phone is required!";
         }
 
+        #endregion
+
+        #region Generate Refresh Token
+
         private RefreshToken GenerateRefreshToken()
         {
             var randomNumber = new byte[32];
@@ -262,5 +309,8 @@ namespace Medical.EF.Repositories
                 CreatedOn = DateTime.UtcNow
             };
         }
+
+        #endregion
+
     }
 }

@@ -11,6 +11,8 @@ namespace Medical.Core.Repositories
     public class PostRepository : BaseRepository<Post> , IPostRepository
     {
 
+        #region Dependancey injuction
+
         private readonly IImageRepository _imageRepository;
 
         public PostRepository(ApplicationDbContext context, IImageRepository imageRepository) : base(context)
@@ -18,6 +20,11 @@ namespace Medical.Core.Repositories
             _context = context;
             _imageRepository = imageRepository;
         }
+
+        #endregion
+
+
+        #region Create New Post
 
         public async Task<string> CreateNewPost(AddPostDto dto)
         {
@@ -33,7 +40,7 @@ namespace Medical.Core.Repositories
                 string c = posts[0].Substring(12);
                 count = Convert.ToInt32(c) + 1;
             }
-            
+
 
             string type;
 
@@ -61,9 +68,9 @@ namespace Medical.Core.Repositories
             _context.Posts.Add(post);
             _context.SaveChanges();
 
-            if(post.PostType == "Image")
+            if (post.PostType == "Image")
             {
-                var imageUrl =await _imageRepository.AddImageAsync(dto.image, post.PostId, "PostImages");
+                var imageUrl = await _imageRepository.AddImageAsync(dto.image, post.PostId, "PostImages");
 
                 var image = new PostImage
                 {
@@ -112,12 +119,16 @@ namespace Medical.Core.Repositories
             return "Succseed";
         }
 
+        #endregion
+
+        #region Get All Doctor Posts
+
         public async Task<IEnumerable<GetPostDto>> GetAllDoctorPosts(string phone)
         {
             var posts = _context.Posts.Where(m => m.DoctorPhone == phone).OrderByDescending(m => m.Date).ThenByDescending(m => m.Am_Pm).ThenByDescending(m => m.Time).ToList();
             List<GetPostDto> AllPosts = new List<GetPostDto>();
 
-            foreach(Post item in posts)
+            foreach (Post item in posts)
             {
                 string name = _context.Doctors.Where(m => m.Phone == phone).Select(m => m.Name).FirstOrDefault();
 
@@ -143,6 +154,10 @@ namespace Medical.Core.Repositories
 
             return AllPosts;
         }
+
+        #endregion
+
+        #region Get All Posts
 
         public async Task<IEnumerable<GetPostDto>> GetAllPosts()
         {
@@ -176,6 +191,10 @@ namespace Medical.Core.Repositories
             return AllPosts;
         }
 
+        #endregion
+
+        #region Delete Post
+
         public async Task<string> DeletePost(string postId)
         {
             var post = _context.Posts.Find(postId);
@@ -183,19 +202,19 @@ namespace Medical.Core.Repositories
             if (post != null)
             {
                 var likes = _context.Likes.Where(m => m.PostId == postId).ToList();
-                if(likes != null)
+                if (likes != null)
                 {
                     foreach (Like item in likes)
                     {
                         _context.Likes.Remove(item);
                         _context.SaveChanges();
                     }
-                }               
+                }
 
                 var comments = _context.Comments.Where(m => m.PostId == postId).ToList();
-                if(comments != null)
+                if (comments != null)
                 {
-                    foreach(Comment item in comments)
+                    foreach (Comment item in comments)
                     {
                         _context.Comments.Remove(item);
                         _context.SaveChanges();
@@ -209,7 +228,7 @@ namespace Medical.Core.Repositories
                     _context.SaveChanges();
                 }
 
-                var vedio = _context.PostVedios.Where(m => m.PostId == postId).FirstOrDefault(); 
+                var vedio = _context.PostVedios.Where(m => m.PostId == postId).FirstOrDefault();
                 if (vedio != null)
                 {
                     _context.PostVedios.Remove(vedio);
@@ -225,11 +244,15 @@ namespace Medical.Core.Repositories
             return "This Post Not Found";
         }
 
+        #endregion
+
+        #region Post Like
+
         public async Task<string> PostLike(string postId, string phone)
         {
             var check = _context.Likes.Where(m => m.PostId == postId & m.Patient_Phone == phone).FirstOrDefault();
 
-            if(check is null)
+            if (check is null)
             {
                 var like = new Like
                 {
@@ -243,22 +266,30 @@ namespace Medical.Core.Repositories
             }
             else
             {
-                _context.Likes.Remove(check); 
+                _context.Likes.Remove(check);
                 _context.SaveChanges();
 
                 return "Success";
             }
         }
 
+        #endregion
+
+        #region If User Add Like
+
         public async Task<bool> IfUserAddLike(string postId, string phone)
         {
             var check = _context.Likes.Where(m => m.PostId == postId & m.Patient_Phone == phone).FirstOrDefault();
 
-            if(check is null)
+            if (check is null)
                 return false;
             else
                 return true;
         }
+
+        #endregion
+
+        #region Get Post Comments
 
         public async Task<IEnumerable<GetCommentsDto>> GetPostComments(string postId)
         {
@@ -281,11 +312,15 @@ namespace Medical.Core.Repositories
             return allcomments;
         }
 
+        #endregion
+
+        #region Delete Post Comment
+
         public async Task<string> DeletePostComment(string postId, int commentNumbre)
         {
             var check = _context.Comments.Where(m => m.PostId == postId & m.Number == commentNumbre).FirstOrDefault();
 
-            if(check != null)
+            if (check != null)
             {
                 _context.Comments.Remove(check);
                 _context.SaveChanges();
@@ -295,6 +330,8 @@ namespace Medical.Core.Repositories
 
             return "Not Found!";
         }
+
+        #endregion
 
     }
 }

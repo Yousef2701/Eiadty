@@ -10,6 +10,9 @@ namespace Medical.Api.Controllers
     [ApiController]
     public class ChecksController : ControllerBase
     {
+
+        #region Dependancey injuction
+
         private readonly ICheckRepository _checkRepository;
         private readonly IMapper _mapper;
 
@@ -20,6 +23,10 @@ namespace Medical.Api.Controllers
             _mapper = mapper;
         }
 
+        #endregion
+
+
+        #region Create New Check
 
         [HttpPost("AddCheckInformation")]
         public async Task<IActionResult> CreateNewCheck([FromBody] AddCheckDto dto)
@@ -27,11 +34,19 @@ namespace Medical.Api.Controllers
             return Ok(await _checkRepository.CreateAsync(_mapper.Map<Check>(dto)));
         }
 
+        #endregion
+
+        #region Get All Doctor Checks
+
         [HttpGet("GetAllDoctorChecks")]
         public async Task<IActionResult> GetAllDoctorChecks(string doctorPhone)
         {
             return Ok(await _checkRepository.GetAllDoctorChecks(doctorPhone));
         }
+
+        #endregion
+
+        #region Get All Patient Checks
 
         [HttpGet("GetAllPatientChecks")]
         public async Task<IActionResult> GetAllPatientChecks(string patientPhone)
@@ -39,17 +54,27 @@ namespace Medical.Api.Controllers
             return Ok(await _checkRepository.GetAllPatientChecks(patientPhone));
         }
 
+        #endregion
+
+        #region Get All Patient Doctor Check
+
         [HttpGet("GetAllPatientDoctorCheck")]
         public async Task<IActionResult> GetAllPatientDoctorCheck(string patientPhone, string doctorPhone)
         {
             return Ok(await _checkRepository.GetAllPatientDoctorCheck(patientPhone, doctorPhone));
         }
 
+        #endregion
+
+        #region Get Check By Numbre
+
         [HttpGet("GetCheckByNumbre")]
         public async Task<IActionResult> GetCheckByNumbre(int num)
         {
             return Ok(await _checkRepository.GetCheckByNumbre(num));
         }
+
+        #endregion
 
     }
 }

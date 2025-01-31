@@ -5,13 +5,14 @@ namespace Medical.Core.Repositories
 {
     public class ImageRepository: IImageRepository
     {
-       
 
-        public async Task<string> AddImageAsync(IFormFile imagefile, string phone,string role)
+        #region Add Image Async
+
+        public async Task<string> AddImageAsync(IFormFile imagefile, string phone, string role)
         {
-            if (imagefile == null&&role=="UsersImages")
+            if (imagefile == null && role == "UsersImages")
             { return "avatar.png"; }
-            string imageUrl = phone+imagefile.FileName;
+            string imageUrl = phone + imagefile.FileName;
             string useresImages = Path.Combine(Environment.CurrentDirectory, role);
             string path = Path.Combine(useresImages, imageUrl);
 
@@ -28,6 +29,10 @@ namespace Medical.Core.Repositories
 
             return imageUrl;
         }
+
+        #endregion
+
+        #region Add Vedio Async
 
         public async Task<string> AddVedioAsync(IFormFile vediofile, string phone)
         {
@@ -49,6 +54,10 @@ namespace Medical.Core.Repositories
             return imageUrl;
         }
 
+        #endregion
+
+        #region Update Images
+
         public async Task<string> UpdateImages(IFormFile imagefile, string imagename, string role)
         {
             string imageUrl = imagefile.FileName;
@@ -62,12 +71,20 @@ namespace Medical.Core.Repositories
 
             return imageUrl;//add username at the controller
         }
+
+        #endregion
+
+        #region Is Valid Async
+
         private async Task<bool> IsValidAsync(IFormFile imagefile)
         {
-            if(imagefile.Length>1024*1024)
+            if (imagefile.Length > 1024 * 1024)
                 return false;
 
             return true;
         }
+
+        #endregion
+
     }
 }

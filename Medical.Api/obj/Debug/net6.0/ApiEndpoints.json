@@ -1,0 +1,828 @@
+[
+  {
+    "ContainingType": "Medical.Api.Controllers.AuthoController",
+    "Method": "ActivateAccount",
+    "RelativePath": "api/Autho/ActivateAccount",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Medical.Core.Dtos.AppentAccountDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Medical.Api.Controllers.AuthoController",
+    "Method": "AdminRegisterAsync",
+    "RelativePath": "api/Autho/AdminRegister",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Medical.Core.Dtos.AdminRegisterDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Medical.Api.Controllers.AuthoController",
+    "Method": "AppendAccount",
+    "RelativePath": "api/Autho/AppendAccount",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Medical.Core.Dtos.AppentAccountDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Medical.Api.Controllers.AuthoController",
+    "Method": "DoctorRegisterAsync",
+    "RelativePath": "api/Autho/DoctorRegister",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Phone",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Password",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "CheckPassword",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Governrate",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "City",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Adreess",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Department",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "ScienceDegree",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "FromDay",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "ToDay",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "FromHour",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "ToHour",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "NewCheckPrie",
+        "Type": "System.Double",
+        "IsRequired": false
+      },
+      {
+        "Name": "ReCheckPrie",
+        "Type": "System.Double",
+        "IsRequired": false
+      },
+      {
+        "Name": "IsActive",
+        "Type": "System.Nullable\u00601[[System.Boolean, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "image",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Medical.Api.Controllers.AuthoController",
+    "Method": "IsAccountActive",
+    "RelativePath": "api/Autho/IsAccountActive",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Medical.Core.Dtos.AppentAccountDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Medical.Api.Controllers.AuthoController",
+    "Method": "LogInAsync",
+    "RelativePath": "api/Autho/LogIn",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "user",
+        "Type": "Medical.Core.Dtos.LogInDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Medical.Api.Controllers.AuthoController",
+    "Method": "PatientRegisterAsync",
+    "RelativePath": "api/Autho/PatientRsegister",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "patient",
+        "Type": "Medical.Core.Dtos.PatientDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Medical.Api.Controllers.AuthoController",
+    "Method": "LogOut",
+    "RelativePath": "api/Autho/RevokeToken",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "Medical.Core.Dtos.RevokeDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Medical.Api.Controllers.BooksController",
+    "Method": "CreateBookAsync",
+    "RelativePath": "api/Books/CreateBookAsync",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Medical.Core.Dtos.BookDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Medical.Api.Controllers.BooksController",
+    "Method": "GetAllDoctorBooks",
+    "RelativePath": "api/Books/GetAllDoctorBooks",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "phone",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Medical.Api.Controllers.BooksController",
+    "Method": "GetAllDoctorBooksInDay",
+    "RelativePath": "api/Books/GetAllDoctorBooksInDay",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "phone",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Medical.Api.Controllers.BooksController",
+    "Method": "GetAllPatientBooks",
+    "RelativePath": "api/Books/GetAllPatientBooks",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "patient_Phone",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Medical.Api.Controllers.BooksController",
+    "Method": "GetDoctorNameAndTodatDate",
+    "RelativePath": "api/Books/GetDoctorNameAndTodatDate",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "phone",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Medical.Api.Controllers.ChecksController",
+    "Method": "CreateNewCheck",
+    "RelativePath": "api/Checks/AddCheckInformation",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Medical.Core.Dtos.AddCheckDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Medical.Api.Controllers.ChecksController",
+    "Method": "GetAllDoctorChecks",
+    "RelativePath": "api/Checks/GetAllDoctorChecks",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "doctorPhone",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Medical.Api.Controllers.ChecksController",
+    "Method": "GetAllPatientChecks",
+    "RelativePath": "api/Checks/GetAllPatientChecks",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "patientPhone",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Medical.Api.Controllers.ChecksController",
+    "Method": "GetAllPatientDoctorCheck",
+    "RelativePath": "api/Checks/GetAllPatientDoctorCheck",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "patientPhone",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "doctorPhone",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Medical.Api.Controllers.ChecksController",
+    "Method": "GetCheckByNumbre",
+    "RelativePath": "api/Checks/GetCheckByNumbre",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "num",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Medical.Api.Controllers.ClinicsController",
+    "Method": "GitClinics",
+    "RelativePath": "api/Clinics/GitClinics",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Medical.Api.Controllers.CommentsController",
+    "Method": "CreateNewComment",
+    "RelativePath": "api/Comments/CreateNewComment",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Medical.Core.Dtos.CommentDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Medical.Api.Controllers.CommentsController",
+    "Method": "DeleteComment",
+    "RelativePath": "api/Comments/DeleteComment",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "postId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "commentNumbre",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Medical.Api.Controllers.CommentsController",
+    "Method": "GetPostComments",
+    "RelativePath": "api/Comments/GetPostComments",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "postId",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Medical.Api.Controllers.DiseasesController",
+    "Method": "AddDiseases",
+    "RelativePath": "api/Diseases/AddDiseases",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Medical.Core.Dtos.DiseasesDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Medical.Api.Controllers.DiseasesController",
+    "Method": "DeleteDiseases",
+    "RelativePath": "api/Diseases/DeleteDiseases",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Patient_Phone",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Diseases_Name",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Medical.Api.Controllers.DiseasesController",
+    "Method": "GetAllPatientDiseases",
+    "RelativePath": "api/Diseases/GetAllPatientDiseases",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "patientPhone",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Medical.Api.Controllers.DoctorsController",
+    "Method": "GetAllClinicDoctors",
+    "RelativePath": "api/Doctors/GetAllClinicDoctors",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "clinicName",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Medical.Api.Controllers.DoctorsController",
+    "Method": "GetAll",
+    "RelativePath": "api/Doctors/GetAllDoctors",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Medical.Api.Controllers.DoctorsController",
+    "Method": "GetByIdAsync",
+    "RelativePath": "api/Doctors/GetDoctorById",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "phone",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Medical.Api.Controllers.DrugsController",
+    "Method": "AddDrug",
+    "RelativePath": "api/Drugs/AddDrug",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Medical.Core.Dtos.DrugDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Medical.Api.Controllers.DrugsController",
+    "Method": "DeleteDrug",
+    "RelativePath": "api/Drugs/DeleteDrug",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Patient_Phone",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Drug_Name",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Medical.Api.Controllers.DrugsController",
+    "Method": "GetAllPatientDrugs",
+    "RelativePath": "api/Drugs/GetAllPatientDrugs",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "patientPhone",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Medical.Api.Controllers.FilesController",
+    "Method": "GetDoctorImage",
+    "RelativePath": "api/Files/GetDoctorImage",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "doctorPhone",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Medical.Api.Controllers.FilesController",
+    "Method": "GetPostImage",
+    "RelativePath": "api/Files/GetPostImage",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "postId",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Medical.Api.Controllers.FilesController",
+    "Method": "GetPostVedio",
+    "RelativePath": "api/Files/GetPostVedio",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "postId",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Medical.Api.Controllers.LikesController",
+    "Method": "IfUserAddLike",
+    "RelativePath": "api/Likes/IfUserAddLike",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "postId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "patientPhone",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Medical.Api.Controllers.LikesController",
+    "Method": "PostLikes",
+    "RelativePath": "api/Likes/PostLikes",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "postId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "patientPhone",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Medical.Api.Controllers.OperationsController",
+    "Method": "AddOperation",
+    "RelativePath": "api/Operations/AddOperation",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Medical.Core.Dtos.OperationDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Medical.Api.Controllers.OperationsController",
+    "Method": "DeleteOperation",
+    "RelativePath": "api/Operations/DeleteOperation",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Patient_Phone",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Operation_Name",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Medical.Api.Controllers.OperationsController",
+    "Method": "GetAllPatientOperations",
+    "RelativePath": "api/Operations/GetAllPatientOperations",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "patientPhone",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Medical.Api.Controllers.PatientsController",
+    "Method": "GetAll",
+    "RelativePath": "api/Patients/GetAllPatients",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Medical.Api.Controllers.PatientsController",
+    "Method": "GetById",
+    "RelativePath": "api/Patients/GetPatientById",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "phone",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Medical.Api.Controllers.PostsController",
+    "Method": "CreateNewPost",
+    "RelativePath": "api/Posts/CreateNewPost",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Text",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "DoctorPhone",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "image",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      },
+      {
+        "Name": "vedio",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Medical.Api.Controllers.PostsController",
+    "Method": "DeletePost",
+    "RelativePath": "api/Posts/DeletePost",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "postId",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Medical.Api.Controllers.PostsController",
+    "Method": "GetAllDoctorPosts",
+    "RelativePath": "api/Posts/GetAllDoctorPosts",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "phone",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Medical.Api.Controllers.PostsController",
+    "Method": "GetAllPosts",
+    "RelativePath": "api/Posts/GetAllPosts",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  }
+]

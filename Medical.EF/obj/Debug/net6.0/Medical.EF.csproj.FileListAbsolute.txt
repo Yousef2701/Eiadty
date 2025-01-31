@@ -12,3 +12,18 @@ C:\Users\lap tech\Desktop\Medical\Medical.EF\obj\Debug\net6.0\refint\Medical.EF.
 C:\Users\lap tech\Desktop\Medical\Medical.EF\obj\Debug\net6.0\Medical.EF.pdb
 C:\Users\lap tech\Desktop\Medical\Medical.EF\obj\Debug\net6.0\Medical.EF.genruntimeconfig.cache
 C:\Users\lap tech\Desktop\Medical\Medical.EF\obj\Debug\net6.0\ref\Medical.EF.dll
+G:\Eiadty\Medical.EF\bin\Debug\net6.0\Medical.EF.deps.json
+G:\Eiadty\Medical.EF\bin\Debug\net6.0\Medical.EF.runtimeconfig.json
+G:\Eiadty\Medical.EF\bin\Debug\net6.0\Medical.EF.dll
+G:\Eiadty\Medical.EF\bin\Debug\net6.0\Medical.EF.pdb
+G:\Eiadty\Medical.EF\obj\Debug\net6.0\Medical.EF.csproj.AssemblyReference.cache
+G:\Eiadty\Medical.EF\obj\Debug\net6.0\Medical.EF.GeneratedMSBuildEditorConfig.editorconfig
+G:\Eiadty\Medical.EF\obj\Debug\net6.0\Medical.EF.AssemblyInfoInputs.cache
+G:\Eiadty\Medical.EF\obj\Debug\net6.0\Medical.EF.AssemblyInfo.cs
+G:\Eiadty\Medical.EF\obj\Debug\net6.0\Medical.EF.csproj.CoreCompileInputs.cache
+G:\Eiadty\Medical.EF\obj\Debug\net6.0\Medical.EF.sourcelink.json
+G:\Eiadty\Medical.EF\obj\Debug\net6.0\Medical.EF.dll
+G:\Eiadty\Medical.EF\obj\Debug\net6.0\refint\Medical.EF.dll
+G:\Eiadty\Medical.EF\obj\Debug\net6.0\Medical.EF.pdb
+G:\Eiadty\Medical.EF\obj\Debug\net6.0\Medical.EF.genruntimeconfig.cache
+G:\Eiadty\Medical.EF\obj\Debug\net6.0\ref\Medical.EF.dll

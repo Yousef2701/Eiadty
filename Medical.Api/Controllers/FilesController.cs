@@ -8,12 +8,20 @@ namespace Medical.Api.Controllers
     [ApiController]
     public class FilesController : ControllerBase
     {
+
+        #region Dependancey injuction
+
         private readonly ApplicationDbContext _context;
 
         public FilesController(ApplicationDbContext context)
         {
             _context = context;
         }
+
+        #endregion
+
+
+        #region Get Post Vedio
 
         [HttpGet("GetPostVedio")]
         public async Task<IActionResult> GetPostVedio(string postId)
@@ -24,6 +32,10 @@ namespace Medical.Api.Controllers
             return File(stream, "application/octet-stream", vedioname);
         }
 
+        #endregion
+
+        #region Get Post Image
+
         [HttpGet("GetPostImage")]
         public async Task<IActionResult> GetPostImage(string postId)
         {
@@ -33,6 +45,10 @@ namespace Medical.Api.Controllers
             return File(stream, "application/octet-stream", imagename);
         }
 
+        #endregion
+
+        #region Get Doctor Image
+
         [HttpGet("GetDoctorImage")]
         public async Task<IActionResult> GetDoctorImage(string doctorPhone)
         {
@@ -41,6 +57,8 @@ namespace Medical.Api.Controllers
             var stream = new FileStream(path, FileMode.Open);
             return File(stream, "application/octet-stream", imagename);
         }
+
+        #endregion
 
     }
 }

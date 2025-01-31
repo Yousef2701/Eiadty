@@ -10,6 +10,9 @@ namespace Medical.Api.Controllers
     [ApiController]
     public class PatientsController : ControllerBase
     {
+
+        #region Dependancey injuction
+
         private readonly IBaseRepository<Patient> _patientsRepository;
         private readonly IMapper _mapper;
 
@@ -20,18 +23,27 @@ namespace Medical.Api.Controllers
             _mapper = mapper;
         }
 
+        #endregion
+
+
+        #region Get By Id
+
         [HttpGet("GetPatientById")]
         public async Task<IActionResult> GetById(string phone)
         {
             var patient = await _patientsRepository.GetByIdAsync(phone);
 
-            if (patient == null) 
+            if (patient == null)
                 return NotFound("This Patient is not Found!");
 
             var dto = _mapper.Map<PatientDto>(patient);
 
             return Ok(dto);
         }
+
+        #endregion
+
+        #region Get All
 
         [HttpGet("GetAllPatients")]
         public async Task<IActionResult> GetAll()
@@ -41,5 +53,8 @@ namespace Medical.Api.Controllers
 
             return Ok(dto);
         }
+
+        #endregion
+
     }
 }

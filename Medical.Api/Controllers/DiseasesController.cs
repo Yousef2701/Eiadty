@@ -10,6 +10,9 @@ namespace Medical.Api.Controllers
     [ApiController]
     public class DiseasesController : ControllerBase
     {
+
+        #region Dependancey injuction
+
         private readonly IDiseasesRepository _diseasesRepository;
         private readonly IMapper _mapper;
 
@@ -19,17 +22,30 @@ namespace Medical.Api.Controllers
             _mapper = mapper;
         }
 
+        #endregion
+
+
+        #region Add Diseases
+
         [HttpPost("AddDiseases")]
         public async Task<IActionResult> AddDiseases([FromBody] DiseasesDto dto)
         {
             return Ok(await _diseasesRepository.CreateAsync(_mapper.Map<Diseases>(dto)));
         }
 
+        #endregion
+
+        #region Get All Patient Diseases
+
         [HttpGet("GetAllPatientDiseases")]
         public async Task<IActionResult> GetAllPatientDiseases(string patientPhone)
         {
             return Ok(await _diseasesRepository.GetAllPatientDiseases(patientPhone));
         }
+
+        #endregion
+
+        #region Delete Diseases
 
         [HttpDelete("DeleteDiseases")]
         public async Task<IActionResult> DeleteDiseases(string Patient_Phone, string Diseases_Name)
@@ -41,6 +57,8 @@ namespace Medical.Api.Controllers
             };
             return Ok(await _diseasesRepository.DeleteDiseases(dto));
         }
+
+        #endregion
 
     }
 }

@@ -12,6 +12,8 @@ namespace Medical.Core.Repositories
     public class PatientRepository : IPatientRepository
     {
 
+        #region Dependancey injuction
+
         private readonly ApplicationDbContext _context;
         private readonly IAuthoRepository _authoRepository;
         private readonly IMapper _mapper;
@@ -24,6 +26,11 @@ namespace Medical.Core.Repositories
             _authoRepository = authoRepository;
             _mapper = mapper;
         }
+
+        #endregion
+
+
+        #region Add Patient Async
 
         public async Task<AuthModel> AddPatientAsync(PatientDto patient)
         {
@@ -83,6 +90,10 @@ namespace Medical.Core.Repositories
             };
         }
 
+        #endregion
+
+        #region Check Phone Excist
+
         private async Task<bool> CheckPhoneExcist(string phone)
         {
             var checkPhone = _context.Patients.Find(phone);
@@ -90,6 +101,10 @@ namespace Medical.Core.Repositories
                 return false;
             return true;
         }
+
+        #endregion
+
+        #region Delete User
 
         private async Task<string> DeleteUser(string phone)
         {
@@ -102,5 +117,8 @@ namespace Medical.Core.Repositories
             return deleted;
 
         }
+
+        #endregion
+
     }
 }

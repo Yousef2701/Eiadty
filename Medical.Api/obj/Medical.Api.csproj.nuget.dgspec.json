@@ -1,24 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\lap tech\\Desktop\\Medical\\Medical.Api\\Medical.Api.csproj": {}
+    "G:\\Eiadty\\Medical.Api\\Medical.Api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\lap tech\\Desktop\\Medical\\Medical.Api\\Medical.Api.csproj": {
+    "G:\\Eiadty\\Medical.Api\\Medical.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lap tech\\Desktop\\Medical\\Medical.Api\\Medical.Api.csproj",
+        "projectUniqueName": "G:\\Eiadty\\Medical.Api\\Medical.Api.csproj",
         "projectName": "Medical.Api",
-        "projectPath": "C:\\Users\\lap tech\\Desktop\\Medical\\Medical.Api\\Medical.Api.csproj",
-        "packagesPath": "C:\\Users\\lap tech\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lap tech\\Desktop\\Medical\\Medical.Api\\obj\\",
+        "projectPath": "G:\\Eiadty\\Medical.Api\\Medical.Api.csproj",
+        "packagesPath": "C:\\Users\\Joe\\.nuget\\packages\\",
+        "outputPath": "G:\\Eiadty\\Medical.Api\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\lap tech\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Joe\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -27,15 +26,14 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\lap tech\\Desktop\\Medical\\Medical.Core\\Medical.Core.csproj": {
-                "projectPath": "C:\\Users\\lap tech\\Desktop\\Medical\\Medical.Core\\Medical.Core.csproj"
+              "G:\\Eiadty\\Medical.Core\\Medical.Core.csproj": {
+                "projectPath": "G:\\Eiadty\\Medical.Core\\Medical.Core.csproj"
               }
             }
           }
@@ -44,7 +42,13 @@
           "warnAsError": [
             "NU1605"
           ]
-        }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net6.0": {
@@ -88,25 +92,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\lap tech\\Desktop\\Medical\\Medical.Core\\Medical.Core.csproj": {
+    "G:\\Eiadty\\Medical.Core\\Medical.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lap tech\\Desktop\\Medical\\Medical.Core\\Medical.Core.csproj",
+        "projectUniqueName": "G:\\Eiadty\\Medical.Core\\Medical.Core.csproj",
         "projectName": "Medical.Core",
-        "projectPath": "C:\\Users\\lap tech\\Desktop\\Medical\\Medical.Core\\Medical.Core.csproj",
-        "packagesPath": "C:\\Users\\lap tech\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lap tech\\Desktop\\Medical\\Medical.Core\\obj\\",
+        "projectPath": "G:\\Eiadty\\Medical.Core\\Medical.Core.csproj",
+        "packagesPath": "C:\\Users\\Joe\\.nuget\\packages\\",
+        "outputPath": "G:\\Eiadty\\Medical.Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\lap tech\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Joe\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -115,15 +118,14 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\lap tech\\Desktop\\Medical\\Medical.EF\\Medical.EF.csproj": {
-                "projectPath": "C:\\Users\\lap tech\\Desktop\\Medical\\Medical.EF\\Medical.EF.csproj"
+              "G:\\Eiadty\\Medical.EF\\Medical.EF.csproj": {
+                "projectPath": "G:\\Eiadty\\Medical.EF\\Medical.EF.csproj"
               }
             }
           }
@@ -132,7 +134,13 @@
           "warnAsError": [
             "NU1605"
           ]
-        }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net6.0": {
@@ -167,25 +175,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\lap tech\\Desktop\\Medical\\Medical.EF\\Medical.EF.csproj": {
+    "G:\\Eiadty\\Medical.EF\\Medical.EF.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lap tech\\Desktop\\Medical\\Medical.EF\\Medical.EF.csproj",
+        "projectUniqueName": "G:\\Eiadty\\Medical.EF\\Medical.EF.csproj",
         "projectName": "Medical.EF",
-        "projectPath": "C:\\Users\\lap tech\\Desktop\\Medical\\Medical.EF\\Medical.EF.csproj",
-        "packagesPath": "C:\\Users\\lap tech\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lap tech\\Desktop\\Medical\\Medical.EF\\obj\\",
+        "projectPath": "G:\\Eiadty\\Medical.EF\\Medical.EF.csproj",
+        "packagesPath": "C:\\Users\\Joe\\.nuget\\packages\\",
+        "outputPath": "G:\\Eiadty\\Medical.EF\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\lap tech\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Joe\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -194,7 +201,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -207,7 +213,13 @@
           "warnAsError": [
             "NU1605"
           ]
-        }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net6.0": {
@@ -248,7 +260,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

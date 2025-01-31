@@ -758,7 +758,10 @@
           "Microsoft.EntityFrameworkCore.SqlServer": "7.0.9"
         },
         "runtime": {
-          "Medical.EF.dll": {}
+          "Medical.EF.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }

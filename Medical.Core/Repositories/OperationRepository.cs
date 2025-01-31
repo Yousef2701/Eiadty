@@ -8,9 +8,17 @@ namespace Medical.Core.Repositories
 {
     public class OperationRepository : BaseRepository<Operation>, IOperationRepository
     {
+
+        #region Dependancey injuction
+
         public OperationRepository(ApplicationDbContext context) : base(context)
         {
         }
+
+        #endregion
+
+
+        #region Get All Patient Operation
 
         public async Task<IEnumerable<Operation>> GetAllPatientOperation(string patientPhone)
         {
@@ -18,6 +26,10 @@ namespace Medical.Core.Repositories
 
             return operations;
         }
+
+        #endregion
+
+        #region Delete Operation
 
         public async Task<string> DeleteOperation(OperationDto dto)
         {
@@ -32,6 +44,8 @@ namespace Medical.Core.Repositories
             else
                 return "Operation Not Found";
         }
+
+        #endregion
 
     }
 }

@@ -13,3 +13,19 @@ C:\Users\lap tech\Desktop\Medical\Medical.Core\obj\Debug\net6.0\ref\Medical.Core
 C:\Users\lap tech\Desktop\Medical\Medical.Core\bin\Debug\net6.0\Medical.EF.dll
 C:\Users\lap tech\Desktop\Medical\Medical.Core\bin\Debug\net6.0\Medical.EF.pdb
 C:\Users\lap tech\Desktop\Medical\Medical.Core\obj\Debug\net6.0\Medical.Core.csproj.CopyComplete
+G:\Eiadty\Medical.Core\bin\Debug\net6.0\Medical.Core.deps.json
+G:\Eiadty\Medical.Core\bin\Debug\net6.0\Medical.Core.dll
+G:\Eiadty\Medical.Core\bin\Debug\net6.0\Medical.Core.pdb
+G:\Eiadty\Medical.Core\bin\Debug\net6.0\Medical.EF.dll
+G:\Eiadty\Medical.Core\bin\Debug\net6.0\Medical.EF.pdb
+G:\Eiadty\Medical.Core\obj\Debug\net6.0\Medical.Core.csproj.AssemblyReference.cache
+G:\Eiadty\Medical.Core\obj\Debug\net6.0\Medical.Core.GeneratedMSBuildEditorConfig.editorconfig
+G:\Eiadty\Medical.Core\obj\Debug\net6.0\Medical.Core.AssemblyInfoInputs.cache
+G:\Eiadty\Medical.Core\obj\Debug\net6.0\Medical.Core.AssemblyInfo.cs
+G:\Eiadty\Medical.Core\obj\Debug\net6.0\Medical.Core.csproj.CoreCompileInputs.cache
+G:\Eiadty\Medical.Core\obj\Debug\net6.0\Medical.Core.sourcelink.json
+G:\Eiadty\Medical.Core\obj\Debug\net6.0\Medical..28575574.Up2Date
+G:\Eiadty\Medical.Core\obj\Debug\net6.0\Medical.Core.dll
+G:\Eiadty\Medical.Core\obj\Debug\net6.0\refint\Medical.Core.dll
+G:\Eiadty\Medical.Core\obj\Debug\net6.0\Medical.Core.pdb
+G:\Eiadty\Medical.Core\obj\Debug\net6.0\ref\Medical.Core.dll

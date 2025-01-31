@@ -8,6 +8,9 @@ namespace Medical.Api.Controllers
     [ApiController]
     public class ClinicsController : ControllerBase
     {
+
+        #region Dependancey injuction
+
         private readonly IBaseRepository<Clinic> _clinicsRepository;
 
         public ClinicsController(IBaseRepository<Clinic> clinicsRepository)
@@ -15,10 +18,18 @@ namespace Medical.Api.Controllers
             _clinicsRepository = clinicsRepository;
         }
 
+        #endregion
+
+
+        #region Git Clinics
+
         [HttpGet("GitClinics")]
         public async Task<IActionResult> GitClinics()
         {
             return Ok(await _clinicsRepository.GetAllAsync());
         }
+
+        #endregion
+
     }
 }

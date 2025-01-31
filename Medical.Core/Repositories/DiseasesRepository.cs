@@ -8,9 +8,17 @@ namespace Medical.Core.Repositories
 {
     public class DiseasesRepository : BaseRepository<Diseases>, IDiseasesRepository
     {
+
+        #region Dependancey injuction
+
         public DiseasesRepository(ApplicationDbContext context) : base(context)
         {
         }
+
+        #endregion
+
+
+        #region Get All Patient Diseases
 
         public async Task<IEnumerable<Diseases>> GetAllPatientDiseases(string patientPhone)
         {
@@ -18,6 +26,10 @@ namespace Medical.Core.Repositories
 
             return diseases;
         }
+
+        #endregion
+
+        #region Delete Diseases
 
         public async Task<string> DeleteDiseases(DiseasesDto dto)
         {
@@ -32,5 +44,8 @@ namespace Medical.Core.Repositories
             else
                 return "Diseases Not Found";
         }
+
+        #endregion
+
     }
 }

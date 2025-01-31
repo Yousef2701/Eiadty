@@ -10,6 +10,8 @@ namespace Medical.Api.Controllers
     public class PostsController : ControllerBase
     {
 
+        #region Dependancey injuction
+
         private readonly IPostRepository _postsRepository;
         private readonly IMapper _mapper;
 
@@ -20,11 +22,20 @@ namespace Medical.Api.Controllers
             _mapper = mapper;
         }
 
+        #endregion
+
+
+        #region Create New Post
+
         [HttpPost("CreateNewPost")]
         public async Task<IActionResult> CreateNewPost([FromForm] AddPostDto dto)
         {
             return Ok(await _postsRepository.CreateNewPost(dto));
         }
+
+        #endregion
+
+        #region Get All Posts
 
         [HttpGet("GetAllPosts")]
         public async Task<IActionResult> GetAllPosts()
@@ -33,6 +44,10 @@ namespace Medical.Api.Controllers
             return Ok(posts);
         }
 
+        #endregion
+
+        #region Get All Doctor Posts
+
         [HttpGet("GetAllDoctorPosts")]
         public async Task<IActionResult> GetAllDoctorPosts(string phone)
         {
@@ -40,12 +55,17 @@ namespace Medical.Api.Controllers
             return Ok(posts);
         }
 
+        #endregion
+
+        #region Delete Post
+
         [HttpDelete("DeletePost")]
         public async Task<IActionResult> DeletePost(string postId)
         {
             return Ok(await _postsRepository.DeletePost(postId));
         }
 
+        #endregion
 
     }
 }

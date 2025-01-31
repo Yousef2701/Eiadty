@@ -9,10 +9,17 @@ namespace Medical.Core.Repositories
     public class BookRepository : BaseRepository<Book> ,IBookRepository
     {
 
+        #region Dependancey injuction
+
         public BookRepository(ApplicationDbContext context) : base(context)
         {
             _context = context;
         }
+
+        #endregion
+
+
+        #region Get All Doctor Books Async
 
         public async Task<IEnumerable<DoctorBooksDto>> GetAllDoctorBooksAsync(string Doctor_Phone)
         {
@@ -24,7 +31,7 @@ namespace Medical.Core.Repositories
                 var b = new DoctorBooksDto
                 {
                     Doctor_Name = _context.Doctors.Where(m => m.Phone == item.Doctor_Phone).Select(m => m.Name).FirstOrDefault(),
-                    Patient_Name = _context.Patients.Where(m => m.Phone == item.Patient_Phone).Select(m => m.FName).FirstOrDefault() +" "+ _context.Patients.Where(m => m.Phone == item.Patient_Phone).Select(m => m.LName).FirstOrDefault(),
+                    Patient_Name = _context.Patients.Where(m => m.Phone == item.Patient_Phone).Select(m => m.FName).FirstOrDefault() + " " + _context.Patients.Where(m => m.Phone == item.Patient_Phone).Select(m => m.LName).FirstOrDefault(),
                     Complaint = item.Complaint,
                     Date = item.Date,
                     Time = item.Time + " " + item.Am_Pm,
@@ -38,6 +45,10 @@ namespace Medical.Core.Repositories
 
             return docBooks;
         }
+
+        #endregion
+
+        #region Get All Patient Books Async
 
         public async Task<IEnumerable<DoctorBooksDto>> GetAllPatientBooksAsync(string Patient_Phone)
         {
@@ -64,6 +75,10 @@ namespace Medical.Core.Repositories
             return docBooks;
         }
 
+        #endregion
+
+        #region Get All Doctor Books In Day Async
+
         public async Task<IEnumerable<DoctorBooksDto>> GetAllDoctorBooksInDayAsync(string Doctor_Phone, string Date)
         {
             var books = _context.Books.Where(m => m.Doctor_Phone == Doctor_Phone & m.Date == Date).OrderBy(m => m.Am_Pm).ThenBy(m => m.Time).ToList();
@@ -88,5 +103,8 @@ namespace Medical.Core.Repositories
 
             return docBooks;
         }
+
+        #endregion
+
     }
 }
